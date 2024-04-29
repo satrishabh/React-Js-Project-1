@@ -5,6 +5,9 @@ import CoreConcept from './components/CoreConcept.jsx'
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  function handleSelect(selectedButton) {
+    alert(selectedButton);
+  }
   return (
     <div>
       <Header />
@@ -23,11 +26,15 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
-        <section id="example">
-            <h2>Examples</h2>
-            <menu>
-              <TabButton>Components</TabButton>
-            </menu>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onClick={()=>handleSelect('components')}>Components</TabButton>
+            <TabButton onClick={()=>handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onClick={()=>handleSelect('props')}>Props</TabButton>
+            <TabButton onClick={()=>handleSelect('state')}>State</TabButton>
+          </menu>
+          Dynamic Content
         </section>
       </main>
     </div>
